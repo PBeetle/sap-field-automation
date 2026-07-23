@@ -1,0 +1,43 @@
+"""
+SMARTLY Enterprise - Main.py Güncelleme
+Tüm UI Modüllerinin Entegrasyonu
+"""
+
+# Dosyaya eklenecek importlar:
+
+from smartly_v2.ui.job_pool import JobPoolWidget, TeamAssignmentWidget, WarehouseWidget
+from smartly_v2.ui.map_widget import MapWidget
+from smartly_v2.ui.reporting_widget import ReportingWidget
+from smartly_v2.modules.maps_integration import MapsIntegration
+from smartly_v2.modules.reporting import ReportingManager
+
+# MainWindow.__init__ metodundaki tabs.addTab güncellemesi:
+
+"""
+        # İçe Aktarma Sekmesi (Var Olan)
+        self.tabs.addTab(import_widget, "📁 İçe Aktarma")
+        
+        # ÜZELLEŞTİRİLMİŞ: 
+        
+        # İş Havuzu Sekmesi
+        self.job_pool = JobPoolWidget(self.db, self.logger)
+        self.tabs.addTab(self.job_pool, "📋 İş Havuzu")
+        
+        # Ekip Atama Sekmesi  
+        self.team_assignment = TeamAssignmentWidget(self.db, self.logger)
+        self.tabs.addTab(self.team_assignment, "👷 Ekip Atama")
+        
+        # Depo Yönetimi Sekmesi
+        self.warehouse = WarehouseWidget(self.db, self.logger)
+        self.tabs.addTab(self.warehouse, "📦 Depo")
+        
+        # Harita Sekmesi
+        maps_integration = MapsIntegration(self.db, self.logger)
+        self.map_widget = MapWidget(self.db, self.logger, maps_integration)
+        self.tabs.addTab(self.map_widget, "🗺️ Harita")
+        
+        # Raporlama Sekmesi
+        reporting_manager = ReportingManager(self.db, self.logger)
+        self.reporting_widget = ReportingWidget(self.db, self.logger, reporting_manager)
+        self.tabs.addTab(self.reporting_widget, "📊 Raporlar")
+"""
